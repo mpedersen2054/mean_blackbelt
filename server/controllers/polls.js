@@ -15,11 +15,29 @@ var controller = {
   },
 
   getSingle: function(req, res) {
-    res.send('hello polls.getSingle!')
+    Poll.findOne({ _id: req.params.pid }, function(err, poll) {
+      if (err || !poll) {
+        res.json({ success: false, poll: null })
+      } else {
+        res.json({ success: true, poll })
+      }
+    })
   },
 
   create: function(req, res) {
-    res.send('hello polls.create!')
+    if (!req.body) {
+      res.json({ success: false, polls: null })
+    } else {
+      var newPoll = new Poll(req.body)
+      newPoll._creator = req.session.user
+      newPoll.save(function(err) {
+        Poll.find({})
+          .populate('_creator')
+          .exec(function(err, polls) {
+            res.json({ success: true, polls })
+          })
+      })
+    }
   },
 
   incVote: function(req, res) {

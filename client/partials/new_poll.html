@@ -18,15 +18,15 @@
 <div class="row">
   <div class="col-md-8">
     <div class="well">
-      <form class="form">
+      <form class="form" ng-submit="addPoll()">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Question...">
+          <input ng-model="newPoll.title" type="text" class="form-control" placeholder="Question...">
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Option 1...">
+              <input ng-model="newPoll.option1.name" type="text" class="form-control" placeholder="Option 1...">
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Option 2...">
+              <input ng-model="newPoll.option2.name" type="text" class="form-control" placeholder="Option 2...">
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Option 3...">
+              <input ng-model="newPoll.option3.name" type="text" class="form-control" placeholder="Option 3...">
             </div>
           </div>
         </div>

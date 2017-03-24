@@ -23,18 +23,18 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Name</th>
+          <th>Creator</th>
           <th>Survey Question</th>
           <th>Date added</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Something</td>
-          <td>Something</td>
-          <td>Something</td>
-          <td>Something</td>
+        <tr ng-repeat="poll in polls">
+          <td>{{poll._creator.username}}</td>
+          <td><a href="#!/poll/{{poll._id}}">{{poll.title}}</a></td>
+          <td>{{poll.createdAt | date:'mediumDate'}}</td>
+          <td>action</td>
         </tr>
       </tbody>
     </table>

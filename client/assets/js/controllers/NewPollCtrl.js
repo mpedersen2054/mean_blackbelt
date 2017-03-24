@@ -14,4 +14,13 @@ angular.module('myApp')
     }
   })
 
+  $scope.addPoll = function() {
+    PollFactory.create($scope.newPoll, function(err, polls) {
+      if (!err) {
+        $scope.newPoll = {}
+        $location.url('/dashboard')
+      }
+    })
+  }
+
 }])

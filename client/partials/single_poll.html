@@ -11,7 +11,7 @@
 
 <div class="row">
   <div class="col-md-10">
-    <h2>Which breed of dog is great to adopt?</h2>
+    <h2>{{poll.title}}</h2>
     <p>Click the vote button to choose one.</p>
   </div>
 </div>
@@ -30,9 +30,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>Something</td>
-          <td>Something</td>
-          <td>Something</td>
+          <td>{{poll.option1.name}}</td>
+          <td>{{poll.option1.votes}}</td>
+          <td><button class="btn btn-primary">Vote</button></td>
+        </tr>
+        <tr>
+          <td>{{poll.option2.name}}</td>
+          <td>{{poll.option1.votes}}</td>
+          <td><button class="btn btn-primary">Vote</button></td>
+        </tr>
+        <tr>
+          <td>{{poll.option3.name}}</td>
+          <td>{{poll.option1.votes}}</td>
+          <td><button class="btn btn-primary">Vote</button></td>
         </tr>
       </tbody>
     </table>

@@ -12,7 +12,7 @@ angular.module('myApp')
 
       // get polls
       PollFactory.getAll(function(polls) {
-        console.log(polls)
+        $scope.polls = polls
       })
     } else {
       $location.url('/')

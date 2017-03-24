@@ -6,11 +6,35 @@ angular.module('myApp')
   var factory = {}
 
   factory.getAll = function(callback) {
-    $http.get('/api/polls/getAll')
+    $http.get(`/api/polls/getAll`)
       .then(function(response) {
         var data = response.data
         polls = data.polls
         callback(polls)
+      })
+  }
+
+  factory.getSingle = function(pid, callback) {
+    $http.get(`/api/polls/${pid}`)
+      .then(function(response) {
+        var data = response.data
+        if (!data.success) {
+          callback('Poll not found', null)
+        } else {
+          callback(null, data.poll)
+        }
+      })
+  }
+
+  factory.create = function(pollData, callback) {
+    $http.post(`/api/polls/create`, pollData)
+      .then(function(response) {
+        var data = response.data
+        if (!data.success) {
+          callback('Something went wrong!', null)
+        } else {
+          callback(null, data.polls)
+        }
       })
   }
 
