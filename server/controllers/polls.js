@@ -52,7 +52,8 @@ var controller = {
     if (optNum == 'option3') { updOptionQuery = { $inc: { 'option3.votes': 1 } } }
     if (optNum == 'option4') { updOptionQuery = { $inc: { 'option4.votes': 1 } } }
 
-    Poll.findOneAndUpdate({ _id: pid }, updOptionQuery, function(err, poll) {
+    // new: true makes sure it returns the updated doc
+    Poll.findOneAndUpdate({ _id: pid }, updOptionQuery, { new: true }, function(err, poll) {
       if (!err && poll) {
         res.json({ success: true, poll })
       }
