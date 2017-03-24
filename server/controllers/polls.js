@@ -42,6 +42,24 @@ var controller = {
 
   incVote: function(req, res) {
     res.send('hello polls.incVote!')
+  },
+
+  deletePoll: function(req, res) {
+    // console.log(req.body)
+    // res.send('deleting poll')
+    Poll.findOne({ _id: req.body.pid }, function(err, poll) {
+      if (err || !poll) {
+        res.json({ success: false, polls: null })
+      } else {
+        poll.remove(function(err) {
+          Poll.find({})
+            .populate('_creator')
+            .exec(function(err, polls) {
+              res.json({ success: true, polls })
+            })
+        })
+      }
+    })
   }
 
 }

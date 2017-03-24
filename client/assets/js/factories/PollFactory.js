@@ -38,6 +38,18 @@ angular.module('myApp')
       })
   }
 
+  factory.deletePoll = function(pid, callback) {
+    $http.post(`/api/polls/delete`, { pid: pid })
+      .then(function(response) {
+        var data = response.data
+        if (!data.success) {
+          callback('Poll not found', null)
+        } else {
+          callback(null, data.polls)
+        }
+      })
+  }
+
   return factory
 
 }])

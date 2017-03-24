@@ -14,6 +14,7 @@ function routes(app) {
   app.get('/api/polls/:pid', polls.getSingle)
   app.post('/api/polls/create', polls.create)
   app.post('/api/polls/incVote', polls.incVote)
+  app.post('/api/polls/delete', polls.deletePoll)
 
 }
 

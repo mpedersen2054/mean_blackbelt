@@ -19,4 +19,20 @@ angular.module('myApp')
     }
   })
 
+  $scope.logout = function() {
+    UserFactory.logoutUser(function(success) {
+      if (success) {
+        $location.url('/')
+      }
+    })
+  }
+
+  $scope.deletePoll = function(pid) {
+    PollFactory.deletePoll(pid, function(err, polls) {
+      if (!err) {
+        $scope.polls = polls
+      }
+    })
+  }
+
 }])
