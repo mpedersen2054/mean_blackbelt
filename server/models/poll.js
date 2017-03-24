@@ -12,6 +12,7 @@ var pollSchema = new mongoose.Schema({
   option1: optionSchema,
   option2: optionSchema,
   option3: optionSchema,
+  option4: optionSchema,
 }, { timestamps: true })
 
 // export the schema as a model

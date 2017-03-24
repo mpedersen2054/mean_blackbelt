@@ -16,3 +16,13 @@
 a {
   cursor: pointer;
 }
+
+.filter-inp {
+  max-width: 400px;
+  margin: 10px 0 20px;
+}
+
+.form-errors {
+  color: red;
+  margin-bottom: 20px;
+}

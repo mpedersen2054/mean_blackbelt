@@ -18,6 +18,14 @@
 <div class="row">
   <div class="col-md-8">
     <div class="well">
+
+      <!-- errors -->
+      <div ng-if="errors.length > 0" class="form-errors">
+        <div ng-repeat="error in errors" class="form-error">
+          {{error}}
+        </div>
+      </div>
+
       <form class="form" ng-submit="addPoll()">
         <div class="form-group">
           <input ng-model="newPoll.title" type="text" class="form-control" placeholder="Question...">
@@ -43,6 +51,14 @@
           <div class="col-md-6">
             <div class="form-group">
               <input ng-model="newPoll.option3.name" type="text" class="form-control" placeholder="Option 3...">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input ng-model="newPoll.option4.name" type="text" class="form-control" placeholder="Option 4...">
             </div>
           </div>
         </div>
