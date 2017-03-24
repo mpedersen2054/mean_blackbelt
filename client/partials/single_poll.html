@@ -32,22 +32,22 @@
         <tr>
           <td>{{poll.option1.name}}</td>
           <td>{{poll.option1.votes}}</td>
-          <td><button class="btn btn-primary">Vote</button></td>
+          <td><button ng-click="incVote('option1')" class="btn btn-primary">Vote</button></td>
         </tr>
         <tr>
           <td>{{poll.option2.name}}</td>
           <td>{{poll.option2.votes}}</td>
-          <td><button class="btn btn-primary">Vote</button></td>
+          <td><button ng-click="incVote('option2')" class="btn btn-primary">Vote</button></td>
         </tr>
         <tr>
           <td>{{poll.option3.name}}</td>
           <td>{{poll.option3.votes}}</td>
-          <td><button class="btn btn-primary">Vote</button></td>
+          <td><button ng-click="incVote('option3')" class="btn btn-primary">Vote</button></td>
         </tr>
         <tr>
           <td>{{poll.option4.name}}</td>
           <td>{{poll.option4.votes}}</td>
-          <td><button class="btn btn-primary">Vote</button></td>
+          <td><button ng-click="incVote('option4')" class="btn btn-primary">Vote</button></td>
         </tr>
       </tbody>
     </table>

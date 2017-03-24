@@ -41,12 +41,25 @@ var controller = {
   },
 
   incVote: function(req, res) {
-    res.send('hello polls.incVote!')
+    console.log(req.body)
+    var pid = req.body.pid
+    var optNum = req.body.optNum
+    var updOptionQuery
+
+    // create the correction $inc query based on the option# passed in
+    if (optNum == 'option1') { updOptionQuery = { $inc: { 'option1.votes': 1 } } }
+    if (optNum == 'option2') { updOptionQuery = { $inc: { 'option2.votes': 1 } } }
+    if (optNum == 'option3') { updOptionQuery = { $inc: { 'option3.votes': 1 } } }
+    if (optNum == 'option4') { updOptionQuery = { $inc: { 'option4.votes': 1 } } }
+
+    Poll.findOneAndUpdate({ _id: pid }, updOptionQuery, function(err, poll) {
+      if (!err && poll) {
+        res.json({ success: true, poll })
+      }
+    })
   },
 
   deletePoll: function(req, res) {
-    // console.log(req.body)
-    // res.send('deleting poll')
     Poll.findOne({ _id: req.body.pid }, function(err, poll) {
       if (err || !poll) {
         res.json({ success: false, polls: null })

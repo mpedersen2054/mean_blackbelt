@@ -45,7 +45,18 @@ angular.module('myApp')
         if (!data.success) {
           callback('Poll not found', null)
         } else {
-          callback(null, data.polls)
+          polls = data.polls
+          callback(null, polls)
+        }
+      })
+  }
+
+  factory.incVote = function(pid, optNum, callback) {
+    $http.post(`/api/polls/incVote`, { pid, optNum })
+      .then(function(response) {
+        var data = response.data
+        if (data.success) {
+          callback(data.poll)
         }
       })
   }

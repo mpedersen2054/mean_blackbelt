@@ -2,7 +2,7 @@
 var mongoose = require('mongoose')
 
 var optionSchema = new mongoose.Schema({
-  name: { type: String, min: 3, required: true },
+  name: { type: String, min: 3, required: true, unique: true },
   votes: { type: Number, default: 0 }
 })
 

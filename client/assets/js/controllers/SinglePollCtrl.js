@@ -23,4 +23,11 @@ angular.module('myApp')
     }
   })
 
+  $scope.incVote = function(optNum) {
+    console.log($scope.poll._id, optNum)
+    PollFactory.incVote($scope.poll._id, optNum, function(poll) {
+      $scope.poll = poll
+    })
+  }
+
 }])
