@@ -1,4 +1,14 @@
 
-h1 {
-  color: red;
+.links-col {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.links-col ul {
+  list-style: none;
+}
+
+.links-col ul li {
+  display: inline-block;
+  margin-left: 20px;
 }

@@ -7,16 +7,16 @@ angular.module('myApp', ['ngRoute'])
       controller: 'LoginCtrl'
     })
     .when('/dashboard', {
-      templateUrl: 'partials/landing.html',
-      controller: 'LoginCtrl'
+      templateUrl: 'partials/dashboard.html',
+      controller: 'DashboardCtrl'
     })
     .when('/poll/:pid', {
-      templateUrl: 'partials/landing.html',
-      controller: 'LoginCtrl'
+      templateUrl: 'partials/single_poll.html',
+      controller: 'SinglePollCtrl'
     })
     .when('/create', {
-      templateUrl: 'partials/landing.html',
-      controller: 'LoginCtrl'
+      templateUrl: 'partials/new_poll.html',
+      controller: 'NewPollCtrl'
     })
     .otherwise({
       redirectTo: '/'
