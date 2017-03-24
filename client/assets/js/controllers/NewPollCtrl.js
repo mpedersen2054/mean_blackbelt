@@ -37,7 +37,7 @@ angular.module('myApp')
 
     // if there are no errors, continue with adding the poll
     if ($scope.errors.length < 1) {
-      PollFactory.create($scope.newPoll, function(err, polls) {
+      PollFactory.create($scope.newPoll, function(err) {
         if (!err) {
           $scope.newPoll = {}
           $location.url('/dashboard')

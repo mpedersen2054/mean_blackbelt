@@ -4,6 +4,7 @@ angular.module('myApp')
 
   $scope.user = {}
   $scope.polls = []
+  $scope.filterText = ''
 
   UserFactory.getUserSession(function(user) {
     console.log(user, 'from ctrl!')

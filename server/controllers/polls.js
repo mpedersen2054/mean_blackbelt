@@ -31,11 +31,11 @@ var controller = {
       var newPoll = new Poll(req.body)
       newPoll._creator = req.session.user
       newPoll.save(function(err) {
-        Poll.find({})
-          .populate('_creator')
-          .exec(function(err, polls) {
-            res.json({ success: true, polls })
-          })
+        if (err) {
+          res.json({ success: false })
+        } else {
+          res.json({ success: true })
+        }
       })
     }
   },

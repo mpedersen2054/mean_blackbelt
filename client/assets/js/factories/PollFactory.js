@@ -31,9 +31,9 @@ angular.module('myApp')
       .then(function(response) {
         var data = response.data
         if (!data.success) {
-          callback('Something went wrong!', null)
+          callback('Something went wrong!')
         } else {
-          callback(null, data.polls)
+          callback(null)
         }
       })
   }
