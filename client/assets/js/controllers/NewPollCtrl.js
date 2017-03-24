@@ -1,8 +1,10 @@
 
 angular.module('myApp')
-.controller('NewPollCtrl', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location) {
+.controller('NewPollCtrl',
+['$scope', 'UserFactory', 'PollFactory', '$location', function($scope, UserFactory, PollFactory, $location) {
 
   $scope.user = {}
+  $scope.newPoll = {}
 
   UserFactory.getUserSession(function(user) {
     if (user) {

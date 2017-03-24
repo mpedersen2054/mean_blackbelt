@@ -1,6 +1,7 @@
 
 angular.module('myApp')
-.controller('SinglePollCtrl', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location) {
+.controller('SinglePollCtrl',
+['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location) {
 
   $scope.user = {}
 
