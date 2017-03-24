@@ -1,6 +1,7 @@
 
 var mongoose = require('mongoose')
 
+// subdoc schema
 var optionSchema = new mongoose.Schema({
   name: { type: String, min: 3, required: true, unique: true },
   votes: { type: Number, default: 0 }

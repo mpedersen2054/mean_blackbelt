@@ -41,7 +41,6 @@ var controller = {
   },
 
   incVote: function(req, res) {
-    console.log(req.body)
     var pid = req.body.pid
     var optNum = req.body.optNum
     var updOptionQuery

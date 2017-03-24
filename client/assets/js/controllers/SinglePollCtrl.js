@@ -12,7 +12,6 @@ angular.module('myApp')
 
       PollFactory.getSingle($routeParams.pid, function(err, poll) {
         if (err || !poll) {
-          // if the poll was not found
           location.url('/dashboard')
         } else {
           $scope.poll = poll
@@ -24,7 +23,6 @@ angular.module('myApp')
   })
 
   $scope.incVote = function(optNum) {
-    console.log($scope.poll._id, optNum)
     PollFactory.incVote($scope.poll._id, optNum, function(poll) {
       $scope.poll = poll
     })

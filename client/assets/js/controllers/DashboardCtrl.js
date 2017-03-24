@@ -7,7 +7,6 @@ angular.module('myApp')
   $scope.filterText = ''
 
   UserFactory.getUserSession(function(user) {
-    console.log(user, 'from ctrl!')
     if (user) {
       $scope.user  = user
 

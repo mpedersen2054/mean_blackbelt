@@ -9,16 +9,14 @@ var controller = {
     		var newUser = new User(req.body)
     		newUser.save(function(err, user){
     			if (err) {
-    				console.log('error saving')
+            res.json({ success: false, user: null })
     			}else {
     				req.session.user = user
-            console.log('logging in!', user)
     				res.json({success: true, user: user})
     			}
     		})
     	}else {
     		req.session.user = user
-        console.log('logging in!', user)
     		res.json({success: true, user: user})
     	}
     })
