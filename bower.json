@@ -1,0 +1,18 @@
+{
+  "name": "blackbelt",
+  "description": "",
+  "main": "server.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3"
+  }
+}

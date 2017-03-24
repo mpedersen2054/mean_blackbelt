@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp"> <!-- load ng-app here -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello Boiler!</title>
+
+  <!-- require stylesheets, comment out bootstrap if you dont want to use -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="angular/angular.js"></script>
+  <script src="angular-route/angular-route.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/factories/UserFactory.js"></script>
+  <script src="assets/js/factories/PollFactory.js"></script>
+  <script src="assets/js/controllers/LoginCtrl.js"></script>
+  <script src="assets/js/controllers/DashboardCtrl.js"></script>
+  <script src="assets/js/controllers/SinglePollCtrl.js"></script>
+  <script src="assets/js/controllers/NewPollCtrl.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+  <!-- partials will be loaded here -->
+    <div ng-view></div>
+  </div>
+
+</body>
+</html>
