@@ -1,6 +1,6 @@
 
 angular.module('myApp')
-.factory('UserFactory', ['$http', function($http) {
+.factory('PollFactory', ['$http', function($http) {
 
   var user = {}
   var factory = {}

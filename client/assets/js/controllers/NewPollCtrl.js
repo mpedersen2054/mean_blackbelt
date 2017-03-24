@@ -2,6 +2,14 @@
 angular.module('myApp')
 .controller('NewPollCtrl', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location) {
 
-  $scope.hello = 'hello new poll ctrl'
+  $scope.user = {}
+
+  UserFactory.getUserSession(function(user) {
+    if (user) {
+      $scope.user  = user
+    } else {
+      $location.url('/')
+    }
+  })
 
 }])

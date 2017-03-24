@@ -6,6 +6,7 @@ angular.module('myApp')
   var factory = {}
 
   factory.getUserSession = function(callback){
+    console.log('from fact!!')
   	$http.get('/api/users/getSession')
   		.then(function(res){
   			// console.log(res, 'from factory')
@@ -40,6 +41,8 @@ angular.module('myApp')
   			}
   		})
   }
+
+  console.log(factory)
 
   return factory
 
